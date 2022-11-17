@@ -84,8 +84,11 @@ function flipCard() {
         }, 1000)
       }
       moves++
-      let movesLayout = document.getElementById('moves')
+      let movesLayout = document.getElementsByClassName('moves')[0]
       movesLayout.innerHTML = `${moves}`
+
+      let movesLayoutGameOver = document.getElementsByClassName('moves')[1]
+      movesLayoutGameOver.innerHTML = `${moves}`
     }
   }
 }
@@ -95,4 +98,12 @@ function restart() {
   startGame()
   let gameOver = document.getElementById('gameOver')
   gameOver.style.display = 'none'
+
+  moves = 0
+
+  let movesLayout = document.getElementsByClassName('moves')[0]
+  movesLayout.innerHTML = `${moves}`
+
+  let movesLayoutGameOver = document.getElementsByClassName('moves')[1]
+  movesLayoutGameOver.innerHTML = `${moves}`
 }
